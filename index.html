@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>شرح المنصوبات - عرض تقديمي</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+
+        body {
+            background-color: #525252; /* خلفية داكنة للمعاينة */
+            font-family: 'Cairo', sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .slide {
+            background-color: white;
+            width: 297mm; /* عرض A4 أفقي */
+            height: 210mm; /* ارتفاع A4 أفقي */
+            padding: 40px 60px;
+            box-sizing: border-box;
+            margin-bottom: 30px;
+            position: relative;
+            page-break-after: always; /* ضروري لتقسيم الصفحات عند التحويل لـ PDF */
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid #ccc;
+        }
+
+        /* تنسيق رأس الشريحة */
+        .slide-header {
+            border-bottom: 4px solid #4f46e5; /* نيلي */
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .slide-header h2 {
+            margin: 0;
+            color: #312e81; /* نيلي غامق */
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .slide-header span {
+            background-color: #e0e7ff;
+            color: #4338ca;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .content {
+            flex-grow: 1;
+            font-size: 24px;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* تنسيق شريحة العنوان */
+        .title-slide {
+            background: linear-gradient(135deg, #312e81 0%, #1e40af 100%);
+            color: white;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .title-slide h1 {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .title-slide p.subtitle {
+            font-size: 28px;
+            color: #bfdbfe;
+            margin-bottom: 60px;
+        }
+
+        .title-slide .author {
+            border-top: 1px solid rgba(255,255,255,0.3);
+            padding-top: 20px;
+            font-size: 32px; /* تكبير الخط */
+            color: #ffffff;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* المكونات الداخلية */
+        .box {
+            background-color: #f3f4f6;
+            border-right: 6px solid #4f46e5;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .example-box {
+            background-color: #ecfdf5;
+            border: 1px solid #d1fae5;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .alert-box {
+            background-color: #fef2f2;
+            border: 1px solid #fee2e2;
+            color: #991b1b;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+
+        th {
+            background-color: #3730a3;
+            color: white;
+            padding: 15px;
+            text-align: right;
+        }
+
+        td {
+            border: 1px solid #e5e7eb;
+            padding: 12px;
+            background-color: white;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #f9fafb;
+        }
+
+        .footer {
+            margin-top: auto;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            color: #6b7280;
+            font-size: 16px;
+        }
+
+        /* إعدادات الطباعة */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .slide {
+                margin: 0;
+                border: none;
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slide 1: العنوان -->
+    <div class="slide title-slide">
+        <h1>شرح المنصوبات</h1>
+        <p class="subtitle">شرح تفصيلي شامل من دوسية مهارات اللغة العربية</p>
+        <div class="author">
+            إعداد: قيس الجازي
+        </div>
+    </div>
+
+    <!-- Slide 2: المقدمة -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>مقدمة المحاضرة</h2>
+            <span>المقدمة</span>
+        </div>
+        <div class="content">
+            <p>أعزائي الطلبة، أهلاً بكم. موضوعنا اليوم هو <strong>"المنصوبات"</strong>.</p>
+            <div class="box">
+                <strong>أحوال الاسم الثلاثة:</strong>
+                <ul>
+                    <li>الرفع (مثل الفاعل والمبتدأ).</li>
+                    <li>الجر (مثل المجرور بحرف الجر).</li>
+                    <li><strong>النصب (موضوعنا اليوم).</strong></li>
+                </ul>
+            </div>
+            <p>تخيلوا أن المنصوبات هي "المفعولات" والحالات التي تأتي لتوضح الجملة وتزيل إبهامها.</p>
+        </div>
+        <div class="footer">
+            <span>إعداد: قيس الجازي</span>
+            <span>2 / 27</span>
+        </div>
+    </div>
+
+    <!-- Slide 3: المفعول به - تعريف -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>أولاً: المفعول به (التعريف)</h2>
+            <span>المفعول به</span>
+        </div>
+        <div class="content">
+            <div class="box">
+                <strong>التعريف:</strong><br>
+                هو الاسم المنصوب الذي وقع عليه فعل الفاعل. هو الذي "استقبل" الفعل.
+            </div>
+            <div class="example-box" style="background-color: #e0e7ff; border-color: #c7d2fe;">
+                <strong>السؤال المفتاحي:</strong><br>
+                نسأل عنه بـ (ماذا؟) أو (بمن؟).
+            </div>
+        </div>
+        <div class="footer">
+            <span>إعداد: قيس الجازي</span>
+            <span>3 / 27</span>
+        </div>
+    </div>
+
+    <!-- Slide 4: المفعول به - علامات -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>أولاً: المفعول به (سبب النصب وعلامته)</h2>
+            <span>المفعول به</span>
+        </div>
+        <div class="content">
+            <p><strong>السبب:</strong> لأنه مفعول به (وقع عليه الفعل).</p>
+            <ul>
+                <li><strong>الفتحة:</strong> إذا كان مفرداً أو جمع تكسير (مثل: قرأ الطالبُ الدرسَ).</li>
+                <li><strong>الياء:</strong> إذا كان مثنى أو جمع مذكر سالماً (مثل: رأيتُ الطالبينِ / المعلمينَ).</li>
+                <li><strong>الكسرة (نيابة عن الفتحة):</strong> إذا كان جمع مؤنث سالماً (مثل: كافأتُ الطالباتِ).</li>
+                <li><strong>الألف:</strong> إذا كان من الأسماء الخمسة (مثل: رأيتُ أباك).</li>
+            </ul>
+        </div>
+        <div class="footer">
+            <span>إعداد: قيس الجازي</span>
+            <span>4 / 27</span>
+        </div>
+    </div>
+
+    <!-- Slide 5: المفعول به - أمثلة -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>أولاً: المفعول به (أمثلة الدوسية)</h2>
+            <span>المفعول به</span>
+        </div>
+        <div class="content">
+            <div class="example-box">
+                <h3>المثال الأول: "حفظَ الطالبُ القصيدةَ."</h3>
+                <p><strong>الشرح:</strong> مَن الذي قام بالحفظ؟ الطالب (فاعل). ماذا حفظ؟ القصيدة (هي التي وقع عليها الحفظ).</p>
+                <p><strong>القصيدةَ:</strong> مفعول به منصوب وعلامة نصبه الفتحة الظاهرة على آخره.</p>
+            </div>
+            <div class="example-box">
+                <h3>المثال الثاني: "كرمت الجامعةُ المتفوقينَ."</h3>
+                <p><strong>المتفوقين:</strong> مفعول به منصوب وعلامة نصبه الياء لأنه جمع مذكر سالم.</p>
+            </div>
+        </div>
+        <div class="footer">
+            <span>إعداد: قيس الجازي</span>
+            <span>5 / 27</span>
+        </div>
+    </div>
+
+    <!-- Slide 6: المفعول به - تنبيهات -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>أولاً: المفعول به (تنبيهات)</h2>
+            <span>المفعول به</span>
+        </div>
+        <div class="content">
+            <div class="box">
+                <strong>مثال توضيحي جديد:</strong> "ساعدَ الغنيُّ ذا الحاجةِ."<br>
+                (ذا): مفعول به منصوب وعلامة نصبه الألف لأنه من الأسماء الخمسة.
+            </div>
+            <div class="alert-box">
+                <strong>خطأ شائع:</strong> ظن الطالب أن المفعول به يجب أن يأتي دائماً بعد الفاعل مباشرة.<br>
+                <strong>الصواب:</strong> قد يتقدم المفعول به، مثل: "أكلَ التفاحةَ موسى".
+            </div>
+        </div>
+        <div class="footer">
+            <span>إعداد: قيس الجازي</span>
+            <span>6 / 27</span>
+        </div>
+    </div>
+
+    <!-- Slide 7: المفعول المطلق - تعريف -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>ثانياً: المفعول المطلق</h2>
+            <span>المفعول المطلق</span>
+        </div>
+        <div class="content">
+            <div class="box">
+                <strong>التعريف:</strong><br>
+                هو مصدر منصوب مأخوذ من لفظ الفعل نفسه، يأتي لتوكيد الفعل أو بيان نوعه أو عدده.
+            </div>
+            <ul>
+                <li><strong>علامة النصب:</strong> الفتحة غالباً، أو الياء (في المثنى والجمع) أو الكسرة (في جمع المؤنث).</li>
+            </ul>
+        </div>
+        <div class="footer">
+            <span>إعداد: قيس الجازي</span>
+            <span>7 / 27</span>
+        </div>
+    </div>
+
+    <!-- Slide 8: المفعول المطلق - أمثلة -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>ثانياً: المفعول المطلق (أمثلة)</h2>
+            <span>المفعول المطلق</span>
+        </div>
+        <div class="content">
+            <div class="example-box">
+                <strong>1. المؤكد للفعل:</strong> "انطلقَ العداءُ انطلاقاً."<br>
+                (انطلاقاً): مفعول مطلق منصوب وعلامة نصبه تنوين الفتح.
+            </div>
+            <div class="example-box">
+                <strong>2. المبين للنوع:</strong> "قرأتُ القراءةَ الصحيحةَ."<br>
+                (القراءةَ): مفعول مطلق منصوب وعلامة نصبه الفتحة.
+            </div>
+        </div>
+        <div class="footer">
+            <span>إعداد: قيس الجازي</span>
+            <span>8 / 27</span>
+        </div>
+    </div>
+
+    <!-- Slide 9: المفعول المطلق - تنبيهات -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>ثانياً: المفعول المطلق (تنبيهات)</h2>
+            <span>المفعول المطلق</span>
+        </div>
+        <div class="content">
+            <div class="box">
+                <strong>مثال توضيحي جديد:</strong> "دقت الساعةُ دقتين."<br>
+                (دقتين): مفعول مطلق (مبين للعدد) منصوب بالياء.
+            </div>
+            <div class="alert-box">
+                <strong>خطأ شائع:</strong> الخلط بين المفعول المطلق والمفعول به.<br>
+                <strong>التمييز:</strong> المفعول المطلق يجب أن يكون من "جنس" الفعل (نفس الحروف).
+            </div>
+        </div>
+        <div class="footer">
+            <span>إعداد: قيس الجازي</span>
+            <span>9 / 27</span>
+        </div>
+    </div>
+
+    <!-- Slide 10: المفعول لأجله - تعريف -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>ثالثاً: المفعول لأجله</h2>
+            <span>المفعول لأجله</span>
+        </div>
+        <div class="content">
+            <div class="box">
+                <strong>التعريف:</strong> مصدر منصوب يُذكر لبيان سبب حدوث الفعل.
+            </div>
+            <div class="example-box" style="background-color: #e0e7ff; border-color: #c7d2fe;">
+                <strong>السؤال المفتاحي:</strong> نسأل عنه بـ (لماذا؟).
+            </div>
+            <p><strong>العلامة:</strong> الفتحة (تنوين الفتح).</p>
+        </div>
+        <div class="footer">
+            <span>إعداد: قيس الجازي</span>
+            <span>10 / 27</span>
+        </div>
+    </div>
+
+    <!-- Slide 11: المفعول لأجله - أمثلة -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>ثالثاً: المفعول لأجله (الأمثلة)</h2>
+            <span>المفعول لأجله</span>
+        </div>
+        <div class="content">
+            <div class="example-box">
+                <strong>مثال الدوسية:</strong> "أقفُ احتراماً للمعلم."<br>
+                (احتراماً): مفعول لأجله منصوب.
+            </div>
+            <div class="example-box">
+                <strong>مثال جديد:</strong> "تصدقتُ ابتغاءَ مرضاةِ الله."<br>
+                (ابتغاءَ): مفعول لأجله منصوب.
+            </div>
+            <div class="alert-box">
+                <strong>تنبيه:</strong> يجب أن تكون الكلمة مصدراً قلبياً (مشاعر: رغبة، خوفاً، حباً) وليست شيئاً مادياً.
+            </div>
+        </div>
+        <div class="footer">
+            <span>إعداد: قيس الجازي</span>
+            <span>11 / 27</span>
+        </div>
+    </div>
+
+    <!-- Slide 12: المفعول فيه - تعريف -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>رابعاً: المفعول فيه (الظرف)</h2>
+            <span>المفعول فيه</span>
+        </div>
+        <div class="content">
+            <div class="box">
+                <strong>التعريف:</strong><br>
+                اسم منصوب يدل على زمن وقوع الفعل أو مكانه، ويتضمن معنى "في".
+            </div>
+            <p><strong>علامة النصب:</strong> الفتحة.</p>
+        </div>
+        <div class="footer">
+            <span>إعداد: قيس الجازي</span>
+            <span>12 / 27</span>
+        </div>
+    </div>
+
+    <!-- Slide 13: المفعول فيه - أمثلة -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>رابعاً: المفعول فيه (أمثلة)</h2>
+            <span>المفعول فيه</span>
+        </div>
+        <div class="content">
+            <div class="example-box">
+                <strong>ظرف زمان:</strong> "سافرتُ صباحاً."
+            </div>
+            <div class="example-box">
+                <strong>ظرف مكان:</strong> "وقف القائدُ أمامَ الجنود."
+            </div>
+            <div class="example-box">
+                <strong>مثال جديد:</strong> "انتظرتك ساعةً عندَ الباب."
+            </div>
+        </div>
+        <div class="footer">
+            <span>إعداد: قيس الجازي</span>
+            <span>13 / 27</span>
+        </div>
+    </div>
+
+    <!-- Slide 14: المفعول فيه - خطأ شائع -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>رابعاً: المفعول فيه (خطأ شائع)</h2>
+            <span>المفعول فيه</span>
+        </div>
+        <div class="content">
+            <div class="alert-box">
+                <strong>الخطأ:</strong> إعراب كلمات الزمان دائماً ظروفاً.<br>
+                <strong>الصواب:</strong> كلمة مثل (يوم، ساعة) تعرب حسب موقعها إذا لم تتضمن معنى "في".
+            </div>
+            <div class="box">
+                <strong>مثال للتوضيح:</strong> "جاء يومُ الجمعة".<br>
+                (يومُ) هنا فاعل مرفوع، وليست ظرفاً.
+            </div>
+        </div>
+        <div class="footer">
+            <span>إعداد: قيس الجازي</span>
+            <span>14 / 27</span>
+        </div>
+    </div>
+
+    <!-- Slide 15: الحال - تعريف -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>خامساً: الحال</h2>
+            <span>الحال</span>
+        </div>
+        <div class="content">
+            <div class="box">
+                <strong>التعريف:</strong><br>
+                اسم نكرة منصوب يبين هيئة الفاعل أو المفعول به عند وقوع الفعل.
+            </div>
+            <div class="example-box" style="background-color: #e0e7ff; border-color: #c7d2fe;">
+                <strong>السؤال المفتاحي:</strong> نسأل عنه بـ (كيف؟).
+            </div>
+            <p><strong>العلامة:</strong> الفتحة (أو الياء للمثنى والجمع).</p>
+        </div>
+        <div class="footer">
+            <span>إعداد: قيس الجازي</span>
+            <span>15 / 27</span>
+        </div>
+    </div>
+
+    <!-- Slide 16: الحال - أمثلة -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>خامساً: الحال (أمثلة)</h2>
+            <span>الحال</span>
+        </div>
+        <div class="content">
+            <div class="example-box">
+                <strong>مثال الدوسية:</strong> "عاد الجنديُ منتصراً."<br>
+                (منتصراً): حال منصوب بالفتحة.
+            </div>
+            <div class="example-box">
+                <strong>مثال جديد:</strong> "أقبل الطلابُ مسرورين."<br>
+                (مسرورين): حال منصوب بالياء (جمع مذكر سالم).
+            </div>
+        </div>
+        <div class="footer">
+            <span>إعداد: قيس الجازي</span>
+            <span>16 / 27</span>
+        </div>
+    </div>
+
+    <!-- Slide 17: الحال - خطأ شائع -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>خامساً: الحال (خطأ شائع)</h2>
+            <span>الحال</span>
+        </div>
+        <div class="content">
+            <div class="alert-box">
+                <strong>الخطأ:</strong> تعريف الحال بـ (ال). مثال: "جاء الطالب المسرع" (هذا نعت).
+            </div>
+            <div class="box">
+                <strong>القاعدة الذهبية:</strong>
+                <ul>
+                    <li>الحال دائماً <strong>نكرة</strong>.</li>
+                    <li>صاحب الحال دائماً <strong>معرفة</strong>.</li>
+                </ul>
+                <br>
+                <strong>الصواب:</strong> "جاء الطالب مسرعاً".
+            </div>
+        </div>
+        <div class="footer">
+            <span>إعداد: قيس الجازي</span>
+            <span>17 / 27</span>
+        </div>
+    </div>
+
+    <!-- Slide 18: التمييز - تعريف -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>سادساً: التمييز</h2>
+            <span>التمييز</span>
+        </div>
+        <div class="content">
+            <div class="box">
+                <strong>التعريف:</strong><br>
+                اسم نكرة منصوب يذكر ليزيل إبهاماً (غموضاً) عن كلمة قبله أو عن جملة.
+            </div>
+            <ul>
+                <li><strong>تمييز الذات (المفرد):</strong> يأتي بعد الأعداد، المقادير (وزن، كيل، مساحة).</li>
+                <li><strong>تمييز النسبة (الجملة):</strong> يوضح الغموض في الجملة، وغالباً يكون محولاً.</li>
+            </ul>
+        </div>
+        <div class="footer">
+            <span>إعداد: قيس الجازي</span>
+            <span>18 / 27</span>
+        </div>
+    </div>
+
+    <!-- Slide 19: التمييز - أمثلة -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>سادساً: التمييز (أمثلة)</h2>
+            <span>التمييز</span>
+        </div>
+        <div class="content">
+            <div class="example-box">
+                <strong>بعد العدد:</strong> "في المكتبة ثلاثون كتاباً."<br>
+                (كتاباً): تمييز منصوب.
+            </div>
+            <div class="example-box">
+                <strong>بعد المقدار:</strong> "اشتريتُ جراماً ذهباً."<br>
+                (ذهباً): تمييز منصوب.
+            </div>
+            <div class="example-box">
+                <strong>تمييز نسبة:</strong> "ازداد الجوُ حرارةً."<br>
+                (حرارةً): تمييز منصوب.
+            </div>
+        </div>
+        <div class="footer">
+            <span>إعداد: قيس الجازي</span>
+            <span>19 / 27</span>
+        </div>
+    </div>
+
+    <!-- Slide 20: التمييز - مقارنة -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>سادساً: التمييز (مقارنة هامة)</h2>
+            <span>التمييز</span>
+        </div>
+        <div class="content">
+            <div class="alert-box">
+                <strong>الخلط بين الحال والتمييز</strong>
+            </div>
+            <table style="margin-top:20px;">
+                <tr>
+                    <th>الحال</th>
+                    <th>التمييز</th>
+                </tr>
+                <tr>
+                    <td>يبين الهيئة (متحول ومتغير)</td>
+                    <td>يبين الماهية (جامد غالباً)</td>
+                </tr>
+                <tr>
+                    <td>"جاء محمد ضاحكاً"</td>
+                    <td>"طاب محمد نفساً"</td>
+                </tr>
+            </table>
+        </div>
+        <div class="footer">
+            <span>إعداد: قيس الجازي</span>
+            <span>20 / 27</span>
+        </div>
+    </div>
+
+    <!-- Slide 21: المنادى - تعريف -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>سابعاً: المنادى (التعريف والأدوات)</h2>
+            <span>المنادى</span>
+        </div>
+        <div class="content">
+            <div class="box">
+                <strong>التعريف:</strong><br>
+                اسم يُذكر بعد أداة نداء لاستدعاء مسماه أو تنبيهه.
+            </div>
+            <div class="example-box" style="background-color: #fffbeb; border-color: #fcd34d;">
+                <strong>أشهر أدوات النداء:</strong>
+                <ul>
+                    <li>(يا): للبعيد والقريب (وهي الأشهر).</li>
+                    <li>(الهمزة / أيْ): للقريب.</li>
+                    <li>(أيا / هيا): للبعيد.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            <span>إعداد: قيس الجازي</span>
+            <span>21 / 27</span>
+        </div>
+    </div>
+
+    <!-- Slide 22: المنادى - منصوب -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>أنواع المنادى (المعرب المنصوب)</h2>
+            <span>المنادى</span>
+        </div>
+        <div class="content">
+            <p>يكون المنادى <strong>منصوباً</strong> في ثلاث حالات:</p>
+            <ol>
+                <li><strong>المضاف:</strong> (يا طالبَ العلمِ اجتهد).<br><small>طالبَ: منادى منصوب، العلم: مضاف إليه.</small></li>
+                <li><strong>الشبيه بالمضاف:</strong> (يا صاعداً جبلاً انتبه).<br><small>منون ويتصل به ما يكمل معناه.</small></li>
+                <li><strong>النكرة غير المقصودة:</strong> (يا غافلاً تنبه).<br><small>لا تقصد شخصاً بعينه.</small></li>
+            </ol>
+        </div>
+        <div class="footer">
+            <span>إعداد: قيس الجازي</span>
+            <span>22 / 27</span>
+        </div>
+    </div>
+
+    <!-- Slide 23: المنادى - مبني -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>أنواع المنادى (المبني في محل نصب)</h2>
+            <span>المنادى</span>
+        </div>
+        <div class="content">
+            <p>يبنى على ما يرفع به (الضمة غالباً) في محل نصب في حالتين:</p>
+            <div class="box">
+                <strong>1. العلم المفرد (اسم شخص/بلد):</strong><br>
+                مثال: "يا <strong>قدسُ</strong>"، "يا <strong>محمدُ</strong>".<br>
+                <small>إعرابه: منادى مبني على الضم في محل نصب.</small>
+            </div>
+            <div class="box">
+                <strong>2. النكرة المقصودة (شخص محدد):</strong><br>
+                مثال: "يا <strong>طالبُ</strong>" (وأنت تخاطب طالباً بعينه).
+            </div>
+        </div>
+        <div class="footer">
+            <span>إعداد: قيس الجازي</span>
+            <span>23 / 27</span>
+        </div>
+    </div>
+
+    <!-- Slide 24: الملخص -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>جدول تلخيص المنصوبات</h2>
+            <span>للحفظ والمراجعة</span>
+        </div>
+        <div class="content">
+            <table style="font-size: 18px;">
+                <thead>
+                    <tr>
+                        <th>المنصوب</th>
+                        <th>السؤال المفتاحي</th>
+                        <th>علامة النصب</th>
+                        <th>مثال</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>المفعول به</td><td>ماذا؟</td><td>الفتحة</td><td>كتبَ الدرسَ</td></tr>
+                    <tr><td>المفعول المطلق</td><td>(نفس الحروف)</td><td>الفتحة</td><td>درسَ دراسةً</td></tr>
+                    <tr><td>المفعول لأجله</td><td>لماذا؟</td><td>الفتحة</td><td>وقفَ احتراماً</td></tr>
+                    <tr><td>المفعول فيه</td><td>متى/أين؟</td><td>الفتحة</td><td>سافر ليلاً</td></tr>
+                    <tr><td>الحال</td><td>كيف؟</td><td>الفتحة</td><td>جاء ماشياً</td></tr>
+                    <tr><td>التمييز</td><td>ماذا (غموض)؟</td><td>الفتحة</td><td>20 كتاباً</td></tr>
+                    <tr><td>المنادى</td><td>(بعد يا)</td><td>الفتحة</td><td>يا طالبَ العلمِ</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="footer">
+            <span>إعداد: قيس الجازي</span>
+            <span>24 / 27</span>
+        </div>
+    </div>
+
+    <!-- Slide 25: تدريبات 1 -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>أسئلة تدريبية (1)</h2>
+            <span>تدريبات</span>
+        </div>
+        <div class="content">
+            <div class="box">
+                <strong>استخرج المنصوبات وأعربها:</strong>
+                <ol>
+                    <li>قرأتُ الكتابَ قراءةً متأنيةً رغبةً في الفهم.</li>
+                    <li>يا سائقاً تمهل.</li>
+                    <li>وصل المسافرُ متعباً.</li>
+                </ol>
+            </div>
+            <div class="example-box" style="background-color: #f0fdf4; border-color: #bbf7d0;">
+                <strong>الإجابة:</strong><br>
+                1. الكتابَ (مفعول به)، قراءةً (مفعول مطلق)، رغبةً (مفعول لأجله).<br>
+                2. سائقاً (منادى نكرة غير مقصودة منصوب).<br>
+                3. متعباً (حال).
+            </div>
+        </div>
+        <div class="footer">
+            <span>إعداد: قيس الجازي</span>
+            <span>25 / 27</span>
+        </div>
+    </div>
+
+    <!-- Slide 26: تدريبات 2 -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>أسئلة تدريبية (2)</h2>
+            <span>تدريبات</span>
+        </div>
+        <div class="content">
+            <div class="box">
+                <strong>س: صوّب الخطأ:</strong> "رأيتُ الطالبان".<br>
+                <strong>ج:</strong> رأيتُ الطالبينِ (مفعول به منصوب بالياء).
+            </div>
+            <div class="box">
+                <strong>س: أعرب ما تحته خط:</strong> "يا <u>محمدُ</u> أقبل".<br>
+                <strong>ج:</strong> منادى مبني على الضم في محل نصب (لأنه علم مفرد).
+            </div>
+        </div>
+        <div class="footer">
+            <span>إعداد: قيس الجازي</span>
+            <span>26 / 27</span>
+        </div>
+    </div>
+
+    <!-- Slide 27: الخاتمة -->
+    <div class="slide title-slide">
+        <h1>تم بحمد الله</h1>
+        <p class="subtitle">أتمنى أن يكون الشرح وافياً ومفيداً</p>
+        <p style="font-size: 24px;">أنا مساعدك Qaes ai، ومستعد لأي استفسار آخر!</p>
+    </div>
+
+</body>
+</html>
